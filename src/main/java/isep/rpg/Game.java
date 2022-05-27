@@ -144,6 +144,7 @@ public class Game {
         for(Hero hero : heroes ){
             if(hero.getClass().getSimpleName().equals("Healer")){
                 this.currentFighter.heals(heroes.get(rand.nextInt(heroes.size())));
+                fightersIterator = fighters.listIterator();
             }
             else{
                 Fighter ennemy = this.enemies.get(0); //--> 1 seul ennemi pour l'instant...
@@ -151,6 +152,7 @@ public class Game {
                 if (ennemyDefeated) {
                     this.enemies.remove(ennemy);
                     this.fighters.remove(ennemy);
+                    fightersIterator = fighters.listIterator();
                 }
             }
         }
@@ -164,6 +166,7 @@ public class Game {
         if (heroDefeated) {
             this.heroes.remove(hero);
             this.fighters.remove(hero);
+            fightersIterator = fighters.listIterator();
         }
     }
 

@@ -60,6 +60,7 @@ public class GameController {
                 break;
             case END_GAME:
                 fightButton.setDisable(true);
+                fightButton.setText("Oh non, vous avez perdu :'(");
                 break;
         }
     }

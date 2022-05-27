@@ -5,10 +5,10 @@ public class Healer extends SpellCaster {
     public void setHeal(int heal){this.heal=heal;}
     public int getHeal(){return this.heal;}
     public Healer() {
-        this.setLifePoints(1);
+        this.setLifePoints(10);
         this.setManaPoints(20);
         this.setArmor(1);
-        this.setDamage(0);
+        this.setDamage(1);
         this.setHeal(2);
     }
     public boolean heals(Fighter Hero) {
