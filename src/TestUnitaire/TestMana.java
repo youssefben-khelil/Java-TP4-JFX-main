@@ -1,3 +1,5 @@
+package isep.TestUnitaire;
+
 import isep.rpg.BasicEnemy;
 import isep.rpg.Hunter;
 import org.junit.jupiter.api.Test;
@@ -17,5 +19,5 @@ public class TestMana
         int ManaAprès = mage.getManaPoints();
         assertTrue(ManaAvant>ManaAprès);
         System.out.println("Comme on passe de : "+ManaAvant+" à "+ManaAprès+" Alors notre test unitaire est bien vérifié");
-}
+    }
 }

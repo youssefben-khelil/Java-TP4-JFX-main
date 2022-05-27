@@ -1,4 +1,4 @@
-import isep.rpg.Warrior;
+package isep.TestUnitaire;
 
 import java.util.ArrayList;
 import isep.rpg.BasicEnemy;
