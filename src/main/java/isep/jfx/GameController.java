@@ -46,6 +46,9 @@ public class GameController {
                     Game.context.startHeroTurn();
                     updateListViews();
                     Game.context.startNextFighterTurn();
+                    if(Game.context.CheckLvlWin()==true){
+                        Game.context.gainExp();
+                    }
                     updateFightButton();
                     } );
                 break;

@@ -77,12 +77,15 @@ public abstract class Fighter {
         switch(choice) {
             case 1: //Increase Dmg
                 this.setDamage(this.getDamage()+this.damageGrowth);
+                System.out.println("this hero has leveled up his damage");
                 break;
             case 2: //Increase Armor
                 this.setArmor(this.getArmor()+this.armorGrowth);
+                System.out.println("this hero has leveled up his armor");
                 break;
             case 3: //Increase Efficiency of potions and food
                 this.setEffect((float) (this.getEffect()+0.1));
+                System.out.println("this hero has leveled up his potion efficienty");
                 break;
             case 4: // Get potions / food in inventory
 
@@ -95,5 +98,14 @@ public abstract class Fighter {
         this.setLvl(this.lvl+1);
     }
 
+    public boolean levelUpCheck(){
+        if(this.exp>this.lvl*10){
+            System.out.println("this hero is going to level up");
+            this.exp=this.exp-this.lvl*10;
+            this.lvl=this.lvl+1;
+            return true;
+        }
+        else{return false;}
+    }
 
 }

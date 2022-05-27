@@ -124,6 +124,40 @@ public class Game {
         Collections.shuffle(this.fighters); //--> google "java shuffle list"
     }
 
+    public boolean CheckLvlWin(){
+        if (enemies.size() == 0){
+            System.out.println("enemies dead");
+            return true;
+        }
+       else{
+            return false;
+        }
+    }
+
+    public void gainExp(){
+        if(difficulty%5==0) {
+            for (Hero hero : heroes) {
+                hero.gainExp(10*difficulty);
+                System.out.println("here is your reward for defeating the boss");
+                if(hero.levelUpCheck()){
+                    hero.lvlUp(1);
+                }
+            }
+        }
+        else{
+            for (Hero hero : heroes) {
+                hero.gainExp(3*difficulty);
+                System.out.println("here is your reward for defeating the level");
+                if(hero.levelUpCheck()){
+                    hero.lvlUp(1);
+                }
+            }
+        }
+
+    }
+
+
+
     public void startNextFighterTurn() {
 
         if (this.heroes.size() == 0) {
