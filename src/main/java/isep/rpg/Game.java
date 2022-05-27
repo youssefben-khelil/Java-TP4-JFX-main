@@ -13,6 +13,7 @@ import java.util.Random;
 public class Game {
     Random rand = new Random();
     public static Game context;
+    public static int difficulty;
 
 
     public static void playGame() {
@@ -23,6 +24,7 @@ public class Game {
         Game.context = new Game();
         Game.context.generateHeroes();
         Game.context.startCombat();
+        Game.difficulty=0;
     }
 
     public static enum Status {START_COMBAT, HERO_TURN, ENEMY_TURN, END_GAME }
@@ -81,6 +83,13 @@ public class Game {
         fightersIterator = fighters.listIterator();
     }
 
+    public void generateBossFight(){
+        generateBoss();
+        shuffleFighters();
+        // Initialise un "curseur" pour parcourir la liste des combattants
+        fightersIterator = fighters.listIterator();
+    }
+
     private void generateHeroes() {
         this.heroes = new ArrayList<>();
         Hero hero = new Warrior(); //--> un seul héro pour l'instant !
@@ -96,10 +105,15 @@ public class Game {
 
     private void generateEnemies() {
         this.enemies = new ArrayList<>();
-        enemies.add( new BasicEnemy() ); //--> un seul ennemi pour l'instant !
-        enemies.add( new BasicEnemy() );
-        enemies.add( new BasicEnemy() );
-        enemies.add( new BasicEnemy() );
+        enemies.add( new BasicEnemy(this.difficulty) ); //--> un seul ennemi pour l'instant !
+        enemies.add( new BasicEnemy(this.difficulty) );
+        enemies.add( new BasicEnemy(this.difficulty) );
+        enemies.add( new BasicEnemy(this.difficulty) );
+    }
+
+    private void generateBoss(){
+        this.enemies = new ArrayList<>();
+        enemies.add(new Boss(this.difficulty));
     }
 
     // Mélange les héros avec les ennemis dans une liste pour le combat
@@ -115,8 +129,14 @@ public class Game {
         if (this.heroes.size() == 0) {
             this.status = Game.Status.END_GAME;
         } else if (enemies.size() == 0) {
+            this.difficulty=this.difficulty+1;
             this.status = Game.Status.START_COMBAT;
-            generateCombat();
+            if(difficulty%5==0){
+                generateBossFight();
+            }
+            else{
+                generateCombat();
+            }
         } else {
 
             // Récupère le combattant suivant en déplaçant le curseur de liste
