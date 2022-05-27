@@ -40,6 +40,10 @@ public abstract class Fighter {
     public boolean attack(Fighter fighter) {return false; }
     //method Heal
     public boolean heals(Fighter Hero){return false;}
+    //method Heal from Potions
+    public boolean healsPotion(int heal){
+        return this.receiveHealing(heal);
+    }
     //method recieve attack
     public boolean receiveAttack(float lifePoints) {
         this.lifePoints = (this.lifePoints - ((lifePoints)*(100.0f/(100.0f+this.getArmor()))));
@@ -51,8 +55,16 @@ public abstract class Fighter {
         return this.lifePoints <= 0; // Vrai si le combattant est mort
     }
     //method utiliser un consommable
-    public void useConsumable(Consumable consumable) {
+    public void useFood(Potion  pot) {
+        int heal = pot.gainHealth();
+        this.healsPotion(heal);
 
+        //Les spell casters auront de la mana en plus.
+        // Methode complete dans spellcaster
+    }
+    public void usePotion(Food food) {
+        int heal = food.gainHealth()*this.getEffect();
+        this.healsPotion(heal);
     }
 
 }

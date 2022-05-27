@@ -10,6 +10,7 @@ public class Healer extends SpellCaster {
         this.setArmor(1);
         this.setDamage(1);
         this.setHeal(2);
+        this.setEffect(1);
     }
     public boolean heals(Fighter Hero) {
         if(this.getManaPoints()>0){

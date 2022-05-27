@@ -1,10 +1,19 @@
 package isep.rpg;
 
 public class Potion implements Consumable {
-    private int manaRegen;
-    public Potion(int manaRegen){this.manaRegen=manaRegen;}
+    final private int manaRegen;
+    final private int healthRegen;
 
-    public int getManaRegen() {
-        return manaRegen;
+    public Potion(int manaRegen,int healthRegen){this.manaRegen=manaRegen;this.healthRegen=healthRegen;}
+
+
+    @Override
+    public int gainHealth() {
+        return this.healthRegen;
+    }
+
+    @Override
+    public int gainMana() {
+        return this.manaRegen;
     }
 }

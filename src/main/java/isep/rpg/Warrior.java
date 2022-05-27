@@ -5,6 +5,9 @@ public class Warrior extends Hero {
         this.setLifePoints(5);
         this.setArmor(1);
         this.setDamage(3);
+        this.setEffect(1);
+
+
     }
     @Override
     public boolean attack(Fighter enemy) {
