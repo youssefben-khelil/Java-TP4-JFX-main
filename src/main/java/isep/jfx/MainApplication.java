@@ -17,9 +17,8 @@ public class MainApplication extends Application {
                 (MainApplication.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         MainApplication.stage = stage;
-        stage.setTitle("mini-RPG");
+        stage.setTitle("Le RPG de l'année");
         stage.setScene(scene);
         stage.show();
     }
-
 }

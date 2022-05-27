@@ -2,13 +2,38 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.jfx.MainController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="850.0" spacing="20.0" styleClass="rooot" stylesheets="@background2.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.jfx.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label text="Choisir le nombre de Héros" />
-    <Button onAction="#onStartButtonClick" text="Lancer le jeu" />
+    <Label text="Choisir le nombre de Warrior" textFill="RED">
+      <font>
+         <Font name="Century" size="18.0" />
+      </font></Label>
+   <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" prefHeight="16.0" prefWidth="243.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+
+   <Label text="Choisir le nombre de Healer" textFill="RED">
+      <font>
+         <Font name="Century" size="18.0" />
+      </font></Label>
+   <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+
+   <Label text="Choisir le nombre de Hunter" textFill="RED">
+      <font>
+         <Font name="Century" size="18.0" />
+      </font></Label>
+   <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+
+   <Label text="Choisir le noimbre de Mage" textFill="RED">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+   <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+
+
+    <Button onAction="#onStartButtonClick" stylesheets="@test.css" text="Lancer le jeu" />
+
 </VBox>

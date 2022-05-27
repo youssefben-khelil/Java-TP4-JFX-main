@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.jfx.MainController">
+<VBox alignment="CENTER" prefHeight="579.0" prefWidth="1022.0" spacing="20.0" styleClass="rooot" stylesheets="@background.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.jfx.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@image_rpg.jpg" />
-      </image>
-   </ImageView>
 
-    <Label text="MINI-RPG" />
-    <Button onAction="#onStartButtonClick" text="Lancer le jeu" />
-   <Button onAction="#onStartButtonClick2" text="Choisir le nombre de joueur" />
+    <Label text="Bienvenue dans notre MINI-RPG" textFill="WHITE">
+      <font>
+         <Font size="34.0" />
+      </font></Label>
+   <Button onAction="#onStartButtonClick2" prefHeight="47.0" prefWidth="172.0" stylesheets="@test.css" text="Choisir le nombre de joueur" textFill="WHITE" textOverrun="CLIP">
+      <cursor>
+         <Cursor fx:constant="OPEN_HAND" />
+      </cursor></Button>
+   <Label text="Crée par Youssef Ben Khelil et Quentin Donzier" textFill="WHITE" />
+   <cursor>
+      <Cursor fx:constant="CROSSHAIR" />
+   </cursor>
 </VBox>
