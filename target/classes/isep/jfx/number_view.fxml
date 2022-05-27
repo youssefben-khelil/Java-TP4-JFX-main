@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -27,13 +28,16 @@
       </font></Label>
    <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
 
-   <Label text="Choisir le noimbre de Mage" textFill="RED">
+   <Label text="Choisir le nombre de Mage" textFill="RED">
       <font>
          <Font size="18.0" />
       </font></Label>
    <Slider majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
 
 
-    <Button onAction="#onStartButtonClick" stylesheets="@test.css" text="Lancer le jeu" />
+    <Button onAction="#onStartButtonClick" stylesheets="@test.css" text="Lancer le jeu">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
 
 </VBox>

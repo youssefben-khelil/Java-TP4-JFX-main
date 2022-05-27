@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-
-
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -33,6 +31,8 @@
          <cursor>
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
+      <AnchorPane prefHeight="10.0" prefWidth="200.0" />
+      <Button mnemonicParsing="false" stylesheets="@test.css" text="Consommables" />
       <AnchorPane prefHeight="40.0" prefWidth="200.0">
          <children>
             <Label layoutX="194.0" layoutY="3.0" prefHeight="35.0" prefWidth="792.0" text="Bravo ! En récompense de ta victoire tu peux choisir une améliorration !" textFill="WHITE">
