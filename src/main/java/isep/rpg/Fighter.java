@@ -8,8 +8,10 @@ public abstract class Fighter {
     //attributs
     private float lifePoints; // Point de vie du fighter
     private int armor;  // Armure du fighter
+    private int armorGrowth; // Growth for lvl ups
     private float damage; //dégat du fighter
-    private int effect; //l’efficacité de la potion et de la nourriture
+    private float damageGrowth; // Growth for lvl ups
+    private float effect; //l’efficacité de la potion et de la nourriture
     private int exp; // Experience
     private int lvl;
     private  List<Potion> potions = new ArrayList<>();
@@ -23,12 +25,16 @@ public abstract class Fighter {
     public void setDamage(float damage){this.damage=damage;}
     public float getDamage(){return damage;}
     public int getArmor(){return armor;}
-    public void setEffect(int effect){this.effect=effect;}
-    public int getEffect(){return this.effect;}
+    public void setEffect(float effect){this.effect=effect;}
+    public float getEffect(){return this.effect;}
     public void setExp(int exp){this.exp=exp;}
     public int getExp(){return this.exp;}
     public void setLvl(int lvl){this.lvl=lvl;}
     public int getLvl(){return this.lvl;}
+    public void setArmorGrowth(int armorGrowth){this.armorGrowth=armorGrowth;}
+    public void setDamageGrowth(float damageGrowth){this.damageGrowth=damageGrowth;}
+    public void gainExp(int exp){this.exp=this.exp+exp;}
+
 
     public void defend(){
 
@@ -41,7 +47,7 @@ public abstract class Fighter {
     //method Heal
     public boolean heals(Fighter Hero){return false;}
     //method Heal from Potions
-    public boolean healsPotion(int heal){
+    public boolean healsPotion(float heal){
         return this.receiveHealing(heal);
     }
     //method recieve attack
@@ -50,7 +56,7 @@ public abstract class Fighter {
         return this.lifePoints <= 0; // Vrai si le combattant est mort
     }
     //method recieve heal
-    public  boolean receiveHealing(int heal){
+    public  boolean receiveHealing(float heal){
         this.lifePoints+=heal;
         return this.lifePoints <= 0; // Vrai si le combattant est mort
     }
@@ -63,8 +69,31 @@ public abstract class Fighter {
         // Methode complete dans spellcaster
     }
     public void usePotion(Food food) {
-        int heal = food.gainHealth()*this.getEffect();
+        float heal = food.gainHealth()*this.getEffect();
         this.healsPotion(heal);
     }
+
+    public void lvlUp(int choice){
+        switch(choice) {
+            case 1: //Increase Dmg
+                this.setDamage(this.getDamage()+this.damageGrowth);
+                break;
+            case 2: //Increase Armor
+                this.setArmor(this.getArmor()+this.armorGrowth);
+                break;
+            case 3: //Increase Efficiency of potions and food
+                this.setEffect((float) (this.getEffect()+0.1));
+                break;
+            case 4: // Get potions / food in inventory
+
+                break;
+            default:
+                // nothing
+                break;
+        }
+        this.setExp(0);
+        this.setLvl(this.lvl+1);
+    }
+
 
 }
