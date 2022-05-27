@@ -96,4 +96,7 @@ public abstract class Fighter {
     }
 
 
+    public boolean Dead() {
+        return false;
+    }
 }
