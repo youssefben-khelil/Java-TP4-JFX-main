@@ -18,5 +18,14 @@ public class MainController {
         MainApplication.stage.setScene(scene);
         MainApplication.stage.show();
     }
+    @FXML
+    protected void onStartButtonClick2() throws IOException {
+        // Affiche la fenêtre principale du jeu
+        FXMLLoader fxmlLoader = new FXMLLoader
+                (MainApplication.class.getResource("number_view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        MainApplication.stage.setScene(scene);
+        MainApplication.stage.show();
+    }
 
 }

@@ -15,6 +15,7 @@ public abstract class Fighter {
     private  List<Potion> potions = new ArrayList<>();
     private List<Food> foods = new ArrayList<>();
 
+
     // get and set methods
     public float getLifePoints() { return lifePoints; }
     public void setLifePoints(int lifePoints) { this.lifePoints = lifePoints; }
@@ -29,6 +30,9 @@ public abstract class Fighter {
     public void setLvl(int lvl){this.lvl=lvl;}
     public int getLvl(){return this.lvl;}
 
+    public void defend(){
+
+    }
 
     //Other methods
 
