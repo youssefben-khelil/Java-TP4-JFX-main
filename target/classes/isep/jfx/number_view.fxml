@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<<<<<<< HEAD
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -37,15 +36,4 @@
 
     <Button onAction="#onStartButtonClick" stylesheets="@test.css" text="Lancer le jeu" />
 
-=======
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isep.jfx.MainController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-    <Label text="Choisir le nombre de Héros" />
-    <Button onAction="#onStartButtonClick" text="Lancer le jeu" />
->>>>>>> origin/master
 </VBox>
