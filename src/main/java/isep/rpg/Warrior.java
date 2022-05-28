@@ -2,7 +2,7 @@ package isep.rpg;
 
 public class Warrior extends Hero {
     public Warrior() {
-        this.setLifePoints(5);
+        this.setLifePoints(30);
         this.setArmor(20);
         this.setDamage(3);
         this.setEffect(1);

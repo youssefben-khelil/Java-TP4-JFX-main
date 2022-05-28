@@ -13,6 +13,7 @@ public class BasicEnemy extends Enemy {
     }
     @Override
     public boolean attack(Fighter hero) {
+        System.out.println("the enemy attack");
         return hero.receiveAttack(this.getDamage());
     }
 }

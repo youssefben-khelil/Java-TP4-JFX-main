@@ -1,7 +1,6 @@
 package isep.TestUnitaire;
 
-import java.util.ArrayList;
-import isep.rpg.BasicEnemy;
+
 import isep.rpg.Hunter;
 import isep.rpg.Mage;
 import isep.rpg.Boss;

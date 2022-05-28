@@ -44,6 +44,9 @@ public class GameController {
                 fightButton.setText("Attaque du héro...");
                 fightButton.setOnAction( event -> {
                     Game.context.startHeroTurn();
+                    if(Game.context.CheckLvlWin()==true){
+                        Game.context.gainExp();
+                    }
                     updateListViews();
                     Game.context.startNextFighterTurn();
                     if(Game.context.CheckLvlWin()==true){
@@ -56,8 +59,14 @@ public class GameController {
                 fightButton.setText("Attaque de l'ennemi...");
                 fightButton.setOnAction( event -> {
                     Game.context.startEnemyTurn();
+                    if(Game.context.CheckLvlWin()==true){
+                        Game.context.gainExp();
+                    }
                     updateListViews();
                     Game.context.startNextFighterTurn();
+                    if(Game.context.CheckLvlWin()==true){
+                        Game.context.gainExp();
+                    }
                     updateFightButton();
                     } );
                 break;

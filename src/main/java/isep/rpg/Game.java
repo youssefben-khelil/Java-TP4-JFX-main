@@ -38,7 +38,7 @@ public class Game {
         for (Hero hero: this.heroes) {
             heroesStatus.add
                 ( hero.getClass().getSimpleName()
-                + "(" + hero.getLifePoints() + ")"
+                + "(" + hero.getLifePoints() + ")" + "(" + hero.getDamage()+ ")" + "(" + hero.getArmor()+ ")" + "(" + hero.getLvl()+ ")" + "(" + hero.getExp()+ ")"
                 );
         }
         return heroesStatus;
@@ -49,7 +49,7 @@ public class Game {
         for (Enemy enemy: this.enemies) {
             enemyStatus.add
                 ( enemy.getClass().getSimpleName()
-                + "(" + enemy.getLifePoints() + ")"
+                + "(" + enemy.getLifePoints() + ")" + "(" + enemy.getDamage()+ ")" + "(" + enemy.getArmor()+ ")" + "(" + enemy.getLvl()+ ")" + "(" + enemy.getExp()+ ")"
                 );
         }
         return enemyStatus;
@@ -107,8 +107,6 @@ public class Game {
         this.enemies = new ArrayList<>();
         enemies.add( new BasicEnemy(this.difficulty) ); //--> un seul ennemi pour l'instant !
         enemies.add( new BasicEnemy(this.difficulty) );
-        enemies.add( new BasicEnemy(this.difficulty) );
-        enemies.add( new BasicEnemy(this.difficulty) );
     }
 
     private void generateBoss(){
@@ -130,6 +128,7 @@ public class Game {
             return true;
         }
        else{
+            System.out.println("enemies not dead");
             return false;
         }
     }
@@ -153,7 +152,6 @@ public class Game {
                 }
             }
         }
-
     }
 
 
