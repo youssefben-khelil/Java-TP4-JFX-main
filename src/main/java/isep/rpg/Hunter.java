@@ -4,7 +4,7 @@ public class Hunter extends Hero {
 
     private int arrows;
     public Hunter(){
-        this.setLifePoints(2);
+        this.setLifePoints(10);
         this.arrows=30;
         this.setArmor(7);
         this.setDamage(5);

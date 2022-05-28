@@ -108,7 +108,13 @@ public abstract class Fighter {
         else{return false;}
     }
 
-    public boolean Dead() {
-        return false;
+    public boolean Dead()
+    {
+        if (this.getLifePoints() <= 0)
+        {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
