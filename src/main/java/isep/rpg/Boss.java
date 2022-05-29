@@ -7,7 +7,7 @@ public class Boss extends Enemy {
         this.setDamage(10);
     }
     public Boss(int level){
-        this.setLifePoints(30*level+30);
+        this.setLifePoints(10*level+30);
         this.setArmor(20*level+20);
         this.setDamage(3*level+3);
     }

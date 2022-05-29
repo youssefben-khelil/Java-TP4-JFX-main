@@ -98,17 +98,22 @@ public class Game {
         Hero hero2 = new Mage();
         Hero hero3 = new Hunter();
         Hero hero4 = new Healer();
+        Hero hero5 = new Warrior();
         this.heroes.add(hero);
         this.heroes.add(hero4);
-        //this.heroes.add(hero2);
+        this.heroes.add(hero2);
         this.heroes.add(hero3);
+        this.heroes.add(hero5);
+
 
     }
 
     private void generateEnemies() {
         this.enemies = new ArrayList<>();
-        enemies.add( new BasicEnemy(this.difficulty) ); //--> un seul ennemi pour l'instant !
-        enemies.add( new BasicEnemy(this.difficulty) );
+        for (int i = 0; i< this.heroes.size(); i++)
+        {
+            enemies.add(new BasicEnemy(difficulty));
+        }
     }
 
     private void generateBoss(){
@@ -195,10 +200,9 @@ public class Game {
     public void startHeroTurn() {
         // Pour l'instant --> le joueur ne décide pas de l'action du héro
         //                --> le joueur attaque l'ennemi
-        for(Hero hero : heroes ){
-            if(hero.getClass().getSimpleName().equals("Healer")){
+
+            if(this.currentFighter.getClass().getSimpleName().equals("Healer")){
                 this.currentFighter.heals(heroes.get(rand.nextInt(heroes.size())));
-                fightersIterator = fighters.listIterator();
             }
             else{
                 Fighter ennemy = this.enemies.get(0); //--> 1 seul ennemi pour l'instant...
@@ -210,9 +214,10 @@ public class Game {
                     fightersIterator = fighters.listIterator();
                 }
             }
-        }
+
 
     }
+
 
     public void startEnemyTurn() {
         // L'ennemi attaque au hasard un des héros encore vivant

@@ -23,7 +23,7 @@ public class Healer extends SpellCaster {
     public boolean heals(Fighter Hero) {
         if(this.getManaPoints()>0){
             this.setManaPoints(this.getManaPoints()-1);
-            System.out.println("the hero attack");
+            System.out.println("the healer healed");
             return Hero.receiveHealing(this.getHeal());
         }   else{
           return Hero.receiveHealing(0);

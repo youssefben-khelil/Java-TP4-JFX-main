@@ -23,7 +23,7 @@ public class Hunter extends Hero {
     public boolean attack(Fighter enemy) {
         if(this.getArrows()>0){
             this.arrows--;
-            System.out.println("the hero attack");
+            System.out.println("the hunter attack");
             return enemy.receiveAttack(this.getDamage());
         }
         else{
