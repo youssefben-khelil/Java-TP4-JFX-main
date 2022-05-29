@@ -2,7 +2,7 @@ package isep.rpg;
 
 public class Boss extends Enemy {
     public Boss(){
-        this.setLifePoints(100);
+        this.setLifePoints(50);
         this.setArmor(20);
         this.setDamage(10);
     }
