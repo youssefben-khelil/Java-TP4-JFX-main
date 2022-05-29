@@ -17,6 +17,7 @@ public class Mage extends SpellCaster {
     public boolean attack(Fighter enemy) {
         if(this.getManaPoints()>0){
             this.setManaPoints(this.getManaPoints()-1);
+            System.out.println("the hero attack");
             return enemy.receiveAttack(this.getDamage());
         } else{
             return enemy.receiveAttack(0);

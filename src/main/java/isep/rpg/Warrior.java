@@ -17,6 +17,8 @@ public class Warrior extends Hero {
     }
     @Override
     public boolean attack(Fighter enemy) {
+
+        System.out.println("the hero attack");
         return enemy.receiveAttack(this.getDamage());
     }
 }

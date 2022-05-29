@@ -35,6 +35,7 @@ public class Game {
     private List<Hero> heroes;
     public List<String> getHeroesStatus() {
         List<String> heroesStatus = new ArrayList<>();
+        heroesStatus.add("(nomDuHero)(Dmg)(Armor)(Lvl)(Exp)");
         for (Hero hero: this.heroes) {
             heroesStatus.add
                 ( hero.getClass().getSimpleName()
@@ -46,6 +47,7 @@ public class Game {
     private List<Enemy> enemies;
     public List<String> getEnemiesStatus() {
         List<String> enemyStatus = new ArrayList<>();
+        enemyStatus.add("(nomDeLennemie)(Dmg)(Armor)(Lvl)(Exp)");
         for (Enemy enemy: this.enemies) {
             enemyStatus.add
                 ( enemy.getClass().getSimpleName()
@@ -93,7 +95,7 @@ public class Game {
     private void generateHeroes() {
         this.heroes = new ArrayList<>();
         Hero hero = new Warrior(); //--> un seul héro pour l'instant !
-        //Hero hero2 = new Healer();
+        Hero hero2 = new Mage();
         Hero hero3 = new Hunter();
         Hero hero4 = new Healer();
         this.heroes.add(hero);
@@ -201,6 +203,7 @@ public class Game {
             else{
                 Fighter ennemy = this.enemies.get(0); //--> 1 seul ennemi pour l'instant...
                 boolean ennemyDefeated = this.currentFighter.attack(ennemy);
+                System.out.println("the hero attacked. His turn is over");
                 if (ennemyDefeated) {
                     this.enemies.remove(ennemy);
                     this.fighters.remove(ennemy);

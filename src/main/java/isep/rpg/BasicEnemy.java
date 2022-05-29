@@ -2,7 +2,7 @@ package isep.rpg;
 
 public class BasicEnemy extends Enemy {
     public BasicEnemy() {
-        this.setLifePoints(2);
+        this.setLifePoints(1);
         this.setArmor(1);
         this.setDamage(1);
     }
