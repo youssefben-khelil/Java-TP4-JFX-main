@@ -3,9 +3,11 @@ package isep.jfx;
 import isep.rpg.Enemy;
 import isep.rpg.Game;
 import isep.rpg.Hero;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 
 public class GameController {
 
@@ -15,6 +17,14 @@ public class GameController {
     ListView<String> enemyList;
     @FXML
     Button fightButton;
+    @FXML
+    Button ConsumableButton;
+    @FXML
+    Button DmgButton;
+    @FXML
+    Button EffectButton;
+    @FXML
+    Button ArmorButton;
 
     // "initialize()" est appelé par JavaFX à l'affichage de la fenêtre
     @FXML
@@ -45,8 +55,16 @@ public class GameController {
                 fightButton.setOnAction( event -> {
                     Game.context.startHeroTurn();
                     if(Game.context.CheckLvlWin()==true){
+
+
                         Game.context.gainExp();
                     }
+
+                    ConsumableButton.setOnAction( event2 -> {
+                        updateListViews();
+                        Game.context.consume();
+                    } );
+
                     updateListViews();
                     Game.context.startNextFighterTurn();
                     if(Game.context.CheckLvlWin()==true){
@@ -54,6 +72,24 @@ public class GameController {
                     }
                     updateFightButton();
                     } );
+                    DmgButton.setOnAction( event11 -> {
+                        System.out.println("dmg lets gogogogogogog");
+                        updateListViews();
+                        Game.context.lvlup(1);
+                    });
+                        ArmorButton.setOnAction( event12 -> {
+                            System.out.println("armorrrrr lets gogogogogogog");
+                            updateListViews();
+                            Game.context.lvlup(2);
+                        });
+
+                        EffectButton.setOnAction(event13 -> {
+                            System.out.println("idk lets gogogogogogog");
+                            updateListViews();
+                            Game.context.lvlup(3);
+                        });
+
+
                 break;
             case ENEMY_TURN:
                 fightButton.setText("Attaque de l'ennemi...");
@@ -76,5 +112,6 @@ public class GameController {
                 break;
         }
     }
+
 
 }

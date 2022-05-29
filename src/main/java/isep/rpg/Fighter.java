@@ -14,8 +14,8 @@ public abstract class Fighter {
     private float effect; //l’efficacité de la potion et de la nourriture
     private int exp; // Experience
     private int lvl;
-    private  List<Potion> potions = new ArrayList<>();
-    private List<Food> foods = new ArrayList<>();
+    protected  List<Potion> potions = new ArrayList<>();
+    protected List<Food> foods = new ArrayList<>();
 
 
     // get and set methods
@@ -68,8 +68,9 @@ public abstract class Fighter {
         //Les spell casters auront de la mana en plus.
         // Methode complete dans spellcaster
     }
-    public void usePotion(Food food) {
-        float heal = food.gainHealth()*this.getEffect();
+    public void usePotion() {
+        System.out.println("aya you got healed bish");
+        float heal = 5*this.getEffect();
         this.healsPotion(heal);
     }
 

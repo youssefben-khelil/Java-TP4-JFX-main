@@ -146,7 +146,7 @@ public class Game {
                 hero.gainExp(10*difficulty);
                 System.out.println("here is your reward for defeating the boss");
                 if(hero.levelUpCheck()){
-                    hero.lvlUp(1);
+                   // hero.lvlUp(1);
                 }
             }
         }
@@ -155,7 +155,7 @@ public class Game {
                 hero.gainExp(3*difficulty);
                 System.out.println("here is your reward for defeating the level");
                 if(hero.levelUpCheck()){
-                    hero.lvlUp(1);
+                   // hero.lvlUp(1);
                 }
             }
         }
@@ -228,6 +228,22 @@ public class Game {
             this.fighters.remove(hero);
             fightersIterator = fighters.listIterator();
         }
+    }
+
+    public void consume(){
+        this.currentFighter.usePotion();
+        System.out.println("Somethiig happpened here");
+    }
+    public boolean levelupcheckgame(){
+        if (this.currentFighter.levelUpCheck()){
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void lvlup(int choice){
+        this.currentFighter.lvlUp(choice);
     }
 
 }
