@@ -1,8 +1,22 @@
 package isep.TestUnitaire;
 
 import isep.rpg.BasicEnemy;
+import isep.rpg.Boss;
+import isep.rpg.Consumable;
+import isep.rpg.Enemy;
+import isep.rpg.Fighter;
+import isep.rpg.Food;
+import isep.rpg.Game;
+import isep.rpg.Healer;
+import isep.rpg.Hero;
 import isep.rpg.Hunter;
+import isep.rpg.Mage;
+import isep.rpg.Potion;
+import isep.rpg.SpellCaster;
+import isep.rpg.Warrior;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 //On lance le Test Unitaire pour voir si les flèches du Hunter fonctionne correctement//
