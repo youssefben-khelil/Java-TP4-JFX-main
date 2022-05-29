@@ -25,13 +25,13 @@ public class TestDamage {
     public void damageTest(){
         Warrior guerrier = new Warrior();
         BasicEnemy enemy = new BasicEnemy();
-        System.out.println("Attaque du Chasseur : "+guerrier.setDamage());
+        System.out.println("Attaque du Chasseur : " + guerrier.getDamage());
         System.out.println("L'Armure de l'ennemi : "+enemy.getArmor());
-        System.out.println("Dégâts : "+(guerrier.setDamage()-enemy.getArmor()));
+        System.out.println("Dégâts : "+(guerrier.getDamage()));
         int oldEnemyLifePoint = (int) enemy.getLifePoints();
         guerrier.attack(enemy);
         int newEnemyLifePoint = (int) enemy.getLifePoints();
         System.out.println("Dégâts infligés réels : "+(oldEnemyLifePoint-newEnemyLifePoint));
-        assertTrue((guerrier.setDamage()-enemy.getArmor())==(oldEnemyLifePoint-newEnemyLifePoint));
+        assertTrue((guerrier.getDamage()-enemy.getArmor())==(oldEnemyLifePoint-newEnemyLifePoint));
     }
 }
