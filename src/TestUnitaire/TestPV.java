@@ -1,5 +1,3 @@
-package isep.TestUnitaire;
-
 
 import isep.rpg.Hunter;
 import isep.rpg.Mage;
