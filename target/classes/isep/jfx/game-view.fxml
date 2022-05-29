@@ -32,7 +32,7 @@
             <Cursor fx:constant="CLOSED_HAND" />
          </cursor></Button>
       <AnchorPane prefHeight="10.0" prefWidth="200.0" />
-      <Button mnemonicParsing="false" stylesheets="@test.css" text="Consommables" />
+      <Button fx:id="ConsumableButton" defaultButton="true" mnemonicParsing="false" stylesheets="@test.css" text="Consommables" />
       <AnchorPane prefHeight="40.0" prefWidth="200.0">
          <children>
             <Label layoutX="194.0" layoutY="3.0" prefHeight="35.0" prefWidth="792.0" text="Bravo ! En récompense de ta victoire tu peux choisir une améliorration !" textFill="WHITE">
@@ -41,10 +41,10 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Dégâts" />
+      <Button fx:id="DmgButton" defaultButton="true" mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Dégâts" />
       <AnchorPane prefHeight="10.0" prefWidth="200.0" />
-      <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Efficacité Potion" />
+      <Button fx:id="EffectButton" defaultButton="true" mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Efficacité Potion" />
       <AnchorPane prefHeight="10.0" prefWidth="200.0" />
-      <Button mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Armure" />
+      <Button fx:id="ArmorButton" defaultButton="true" mnemonicParsing="false" prefHeight="12.0" prefWidth="101.0" stylesheets="@test.css" text="Armure" />
    </children>
 </VBox>
